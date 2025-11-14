@@ -1,0 +1,23 @@
+{
+  "name": "google-calendar-clone",
+  "version": "1.0.0",
+  "description": "Computer Use Tutor Assignment - Google Calendar Clone",
+  "scripts": {
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
+    "start": "cd backend && npm start",
+    "build": "cd frontend && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "calendar",
+    "react",
+    "nodejs",
+    "sqlite",
+    "fullstack"
+  ],
+  "author": "Amrish",
+  "license": "MIT"
+}

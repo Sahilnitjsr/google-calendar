@@ -1,0 +1,275 @@
+.mini-calendar {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 12px;
+  user-select: none;
+  border: 1px solid #e8eaed;
+}
+
+.mini-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.mini-nav-button {
+  background: none;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #5f6368;
+  transition: background-color 0.2s ease;
+}
+
+.mini-nav-button:hover {
+  background-color: rgba(60, 64, 67, 0.08);
+}
+
+.mini-calendar-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #3c4043;
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+.mini-calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.mini-weekday {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #70757a;
+  text-transform: uppercase;
+}
+
+.mini-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.mini-day {
+  background: none;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: #3c4043;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.mini-day:hover {
+  background-color: rgba(26, 115, 232, 0.1);
+}
+
+.mini-day.other-month {
+  color: #dadce0;
+}
+
+.mini-day.selected {
+  background-color: rgba(26, 115, 232, 0.2);
+  color: #1a73e8;
+  font-weight: 500;
+}
+
+.mini-day.selected:hover {
+  background-color: rgba(26, 115, 232, 0.3);
+}
+
+.mini-day.today {
+  background-color: #1a73e8 !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+.mini-day.today:hover {
+  background-color: #1557b0 !important;
+}
+
+.mini-day.selected:not(.today) {
+  background-color: rgba(26, 115, 232, 0.2);
+  color: #1a73e8;
+  font-weight: 500;
+}
+
+.mini-day.selected:not(.today):hover {
+  background-color: rgba(26, 115, 232, 0.3);
+}
+
+/* Animation for month transitions */
+.mini-calendar-grid {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mini Calendar Year Selector */
+.mini-month-year-container {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.mini-month-year {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+  color: #3c4043;
+}
+
+.mini-month-year:hover {
+  background-color: rgba(26, 115, 232, 0.05);
+}
+
+.month-part {
+  font-weight: 500;
+}
+
+.year-part {
+  color: #1a73e8;
+  font-weight: 500;
+}
+
+.mini-dropdown-arrow {
+  margin-left: 2px;
+  opacity: 0.7;
+  transition: transform 0.2s ease;
+}
+
+.mini-month-year:hover .mini-dropdown-arrow {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+.mini-year-selector {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  min-width: 240px;
+  padding: 12px;
+  margin-top: 4px;
+  animation: fadeInUp 0.2s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.mini-year-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding: 0 4px;
+}
+
+.mini-year-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #5f6368;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.mini-year-nav:hover {
+  background-color: rgba(60, 64, 67, 0.08);
+}
+
+.mini-current-year {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a73e8;
+  min-width: 50px;
+  text-align: center;
+}
+
+.mini-year-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.mini-year-option {
+  padding: 8px 4px;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #3c4043;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.mini-year-option:hover {
+  background-color: rgba(26, 115, 232, 0.1);
+  color: #1a73e8;
+}
+
+.mini-year-option.current {
+  background-color: #1a73e8;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.mini-year-option.current:hover {
+  background-color: #1557b0;
+}

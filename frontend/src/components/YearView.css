@@ -1,0 +1,137 @@
+/* Year View Styling to match Google Calendar exactly */
+
+.year-view {
+  padding: 24px 32px;
+  background-color: #ffffff;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+
+.year-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.year-month {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 0;
+  min-height: 200px;
+}
+
+.year-month-header {
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.year-month-header h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #3c4043;
+  margin: 0;
+  padding: 0;
+  font-family: 'Google Sans', 'Roboto', sans-serif;
+}
+
+.year-month-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  font-size: 12px;
+}
+
+.year-day-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #70757a;
+  text-transform: uppercase;
+  background-color: #ffffff;
+}
+
+.year-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  width: 24px;
+  font-size: 12px;
+  color: #3c4043;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  margin: 1px auto;
+  position: relative;
+}
+
+.year-day:hover {
+  background-color: rgba(26, 115, 232, 0.1);
+}
+
+.year-day.other-month {
+  color: #dadce0;
+}
+
+.year-day.today {
+  background-color: #1a73e8;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.year-day.today:hover {
+  background-color: #1557b0;
+}
+
+.year-day.selected:not(.today) {
+  background-color: rgba(26, 115, 232, 0.2);
+  color: #1a73e8;
+  font-weight: 500;
+}
+
+.year-day.selected:not(.today):hover {
+  background-color: rgba(26, 115, 232, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .year-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px 20px;
+  }
+  
+  .year-view {
+    padding: 20px 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .year-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 16px;
+  }
+  
+  .year-view {
+    padding: 16px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .year-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .year-view {
+    padding: 12px 16px;
+  }
+  
+  .year-month {
+    min-height: 180px;
+  }
+}
