@@ -1072,4 +1072,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 🌟 **Star this repository if you found it helpful!**
 
-*For the latest updates and announcements, follow our [GitHub repository](https://github.com/your-username/google-calendar-clone)*
+*For the latest updates and announcements, follow our [GitHub repository](https://github.com/Sahilnitjsr/google-calendar)*
